@@ -64,7 +64,7 @@ function parsePage(data) {
         rows = i.split('<')[0].split('=')
 
         if (rows.length != 2)
-            throw new Error("invalid parsing data - invalid row", { input: data, row: i })
+            throw new Error(`invalid parsing data - invalid row \n ${JSON.stringify({ input: data, row: i })}`, { input: data, row: i })
 
         propertyName = rows[0].split('.')[1]
         propertyValue = rows[1]
@@ -72,7 +72,7 @@ function parsePage(data) {
     }
 
     if (resultObject.preset == undefined)
-        throw new Error("invalid parsing data - result object is empty", { input: data, output: resultObject })
+        throw new Error(`invalid parsing data - result object is empty \n ${JSON.stringify({ input: data, output: resultObject })}` , { input: data, output: resultObject })
 
     return resultObject
 }
