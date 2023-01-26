@@ -5,8 +5,10 @@ const fs = require('fs');
 const DateDiff = require('./DateDiff');
 const logger = require('./logger')
 
-const hostname = '127.0.0.1';
-const port = 3000;
+require('dotenv').config();
+
+const hostname = process.env.HOSTNAME
+const port = process.env.PORT
 
 const saveFilePath = "./lastParsedScedule.json"
 const hoursBetweenUpdates = 8
