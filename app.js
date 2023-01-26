@@ -10,8 +10,8 @@ require('dotenv').config();
 const hostname = process.env.HOSTNAME
 const port = process.env.PORT
 
-const saveFilePath = "./lastParsedScedule.json"
-const hoursBetweenUpdates = 8
+const saveFilePath = process.env.SAVE_FILE_PATH
+const hoursBetweenUpdates = process.env.HOURS_BETWEEN_UPDATES
 
 const dataFetchOptions = {
     host: 'https://www.dtek-kem.com.ua',
